@@ -91,13 +91,17 @@ struct SourceKitResponseView: View {
       }
     } else if let value = raws as? [Any] {
       ForEach(Array(value.enumerated()), id: \.offset) { index, item in
-        VStack {
+        VStack(alignment: .leading, spacing: 8) {
           let title = "[\(index)]"
           Text(title)
-            .alignmentGuide(.leading) { d in d[.trailing] }
-          Spacer(minLength: 16)
+            .font(Font.system(size: 20))
+            .lineLimit(1)
+            .multilineTextAlignment(.leading)
+            
           SourceKitResponseView(raws: item)
-            .alignmentGuide(.trailing) { d in d[.trailing] }
+            .font(Font.system(size: 16))
+            .multilineTextAlignment(.leading)
+            .padding(.all, 4)
         }
       }
     } else {
