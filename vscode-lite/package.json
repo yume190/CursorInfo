@@ -1,0 +1,23 @@
+{
+  "name": "vscode-lite-tauri",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "prepare:binaries": "bash ./scripts/prepare-binaries.sh"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.2.0",
+    "monaco-editor": "^0.52.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.2.5",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.0"
+  }
+}

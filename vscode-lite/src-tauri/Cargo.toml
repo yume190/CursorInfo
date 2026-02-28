@@ -1,0 +1,19 @@
+[package]
+name = "vscode-lite-tauri"
+version = "0.1.0"
+description = "VSCode-like project browser with Monaco and Swift cursor hook"
+authors = ["you"]
+license = "MIT"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2.0", features = [] }
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2.2", features = [] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
